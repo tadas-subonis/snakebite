@@ -1,2 +1,3 @@
 argparse
+six
 protobuf>2.4.1

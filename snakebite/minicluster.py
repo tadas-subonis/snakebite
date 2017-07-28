@@ -17,7 +17,10 @@ import subprocess
 import select
 import re
 import datetime
+import sys
 
+if sys.version_info[0] == 3:
+    long = int
 
 class MiniCluster(object):
     ''' Class that spawns a hadoop mini cluster and wrap hadoop functionality

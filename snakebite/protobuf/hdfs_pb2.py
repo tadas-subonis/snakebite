@@ -7,7 +7,7 @@ from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 
-import Security_pb2
+from . import Security_pb2
 
 DESCRIPTOR = descriptor.FileDescriptor(
   name='hdfs.proto',
@@ -191,7 +191,7 @@ _EXTENDEDBLOCKPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='poolId', full_name='hadoop.hdfs.ExtendedBlockProto.poolId', index=0,
       number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -240,21 +240,21 @@ _DATANODEIDPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='ipAddr', full_name='hadoop.hdfs.DatanodeIDProto.ipAddr', index=0,
       number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
       name='hostName', full_name='hadoop.hdfs.DatanodeIDProto.hostName', index=1,
       number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
       name='storageID', full_name='hadoop.hdfs.DatanodeIDProto.storageID', index=2,
       number=3, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -387,7 +387,7 @@ _DATANODEINFOPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='location', full_name='hadoop.hdfs.DatanodeInfoProto.location', index=7,
       number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -493,7 +493,7 @@ _CORRUPTFILEBLOCKSPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='cookie', full_name='hadoop.hdfs.CorruptFileBlocksProto.cookie', index=1,
       number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -612,7 +612,7 @@ _DATAENCRYPTIONKEYPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='blockPoolId', full_name='hadoop.hdfs.DataEncryptionKeyProto.blockPoolId', index=1,
       number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -640,7 +640,7 @@ _DATAENCRYPTIONKEYPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='encryptionAlgorithm', full_name='hadoop.hdfs.DataEncryptionKeyProto.encryptionAlgorithm', index=5,
       number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -752,14 +752,14 @@ _HDFSFILESTATUSPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='owner', full_name='hadoop.hdfs.HdfsFileStatusProto.owner', index=4,
       number=5, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
       name='group', full_name='hadoop.hdfs.HdfsFileStatusProto.group', index=5,
       number=6, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1040,7 +1040,7 @@ _SNAPSHOTDIFFREPORTENTRYPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='modificationLabel', full_name='hadoop.hdfs.SnapshotDiffReportEntryProto.modificationLabel', index=1,
       number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1068,21 +1068,21 @@ _SNAPSHOTDIFFREPORTPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='snapshotRoot', full_name='hadoop.hdfs.SnapshotDiffReportProto.snapshotRoot', index=0,
       number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
       name='fromSnapshot', full_name='hadoop.hdfs.SnapshotDiffReportProto.fromSnapshot', index=1,
       number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
       name='toSnapshot', full_name='hadoop.hdfs.SnapshotDiffReportProto.toSnapshot', index=2,
       number=3, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1131,7 +1131,7 @@ _STORAGEINFOPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='clusterID', full_name='hadoop.hdfs.StorageInfoProto.clusterID', index=2,
       number=3, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1166,14 +1166,14 @@ _NAMENODEREGISTRATIONPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='rpcAddress', full_name='hadoop.hdfs.NamenodeRegistrationProto.rpcAddress', index=0,
       number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
       name='httpAddress', full_name='hadoop.hdfs.NamenodeRegistrationProto.httpAddress', index=1,
       number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1216,7 +1216,7 @@ _CHECKPOINTSIGNATUREPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='blockPoolId', full_name='hadoop.hdfs.CheckpointSignatureProto.blockPoolId', index=0,
       number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1518,7 +1518,7 @@ _NAMESPACEINFOPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='buildVersion', full_name='hadoop.hdfs.NamespaceInfoProto.buildVersion', index=0,
       number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1532,7 +1532,7 @@ _NAMESPACEINFOPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='blockPoolID', full_name='hadoop.hdfs.NamespaceInfoProto.blockPoolID', index=2,
       number=3, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1546,7 +1546,7 @@ _NAMESPACEINFOPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='softwareVersion', full_name='hadoop.hdfs.NamespaceInfoProto.softwareVersion', index=4,
       number=5, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1756,14 +1756,14 @@ _SNAPSHOTINFOPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='snapshotName', full_name='hadoop.hdfs.SnapshotInfoProto.snapshotName', index=0,
       number=1, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
       name='snapshotRoot', full_name='hadoop.hdfs.SnapshotInfoProto.snapshotRoot', index=1,
       number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -1777,21 +1777,21 @@ _SNAPSHOTINFOPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='owner', full_name='hadoop.hdfs.SnapshotInfoProto.owner', index=3,
       number=4, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
       name='group', full_name='hadoop.hdfs.SnapshotInfoProto.group', index=4,
       number=5, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     descriptor.FieldDescriptor(
       name='createTime', full_name='hadoop.hdfs.SnapshotInfoProto.createTime', index=5,
       number=6, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),

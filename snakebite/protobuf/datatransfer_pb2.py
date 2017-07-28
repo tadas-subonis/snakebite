@@ -7,8 +7,8 @@ from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 
-import Security_pb2
-import hdfs_pb2
+from . import Security_pb2
+from . import hdfs_pb2
 
 DESCRIPTOR = descriptor.FileDescriptor(
   name='datatransfer.proto',
@@ -170,7 +170,7 @@ _DATATRANSFERENCRYPTORMESSAGEPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='message', full_name='hadoop.hdfs.DataTransferEncryptorMessageProto.message', index=2,
       number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -241,7 +241,7 @@ _CLIENTOPERATIONHEADERPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='clientName', full_name='hadoop.hdfs.ClientOperationHeaderProto.clientName', index=1,
       number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -529,7 +529,7 @@ _OPREPLACEBLOCKPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='delHint', full_name='hadoop.hdfs.OpReplaceBlockProto.delHint', index=1,
       number=2, type=9, cpp_type=9, label=2,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -795,7 +795,7 @@ _BLOCKOPRESPONSEPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='firstBadLink', full_name='hadoop.hdfs.BlockOpResponseProto.firstBadLink', index=1,
       number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
@@ -816,7 +816,7 @@ _BLOCKOPRESPONSEPROTO = descriptor.Descriptor(
     descriptor.FieldDescriptor(
       name='message', full_name='hadoop.hdfs.BlockOpResponseProto.message', index=4,
       number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=unicode("", "utf-8"),
+      has_default_value=False, default_value=u"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),

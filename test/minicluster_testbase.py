@@ -1,4 +1,4 @@
-import unittest2
+import unittest as unittest2
 import os
 import time
 from snakebite.minicluster import MiniCluster
@@ -6,11 +6,14 @@ from snakebite.client import Client
 
 
 class MiniClusterTestBase(unittest2.TestCase):
-
     cluster = None
 
     @classmethod
     def setupClass(cls):
+        cls.setUpClass()
+
+    @classmethod
+    def setUpClass(cls):
         if not cls.cluster:
             # Prevent running tests if a hadoop cluster is reachable. This guard
             # is in place because the MiniCluster java class can break things on
@@ -27,7 +30,7 @@ class MiniClusterTestBase(unittest2.TestCase):
             cls.cluster = MiniCluster(testfiles_path)
             cls.cluster.put("/test1", "/test1")
             cls.cluster.put("/test1", "/test2")
-            cls.cluster.put("/test3", "/test3") #1024 bytes
+            cls.cluster.put("/test3", "/test3")  # 1024 bytes
             cls.cluster.put("/test1", "/test4")
 
             cls.cluster.mkdir("/zipped")
@@ -69,6 +72,7 @@ class MiniClusterSpecificPortTest(unittest2.TestCase):
         c = MiniCluster(None, nnport=50050)
         self.assertEqual(50050, c.port)
         c.terminate()
+
 
 if __name__ == '__main__':
     try:

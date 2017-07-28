@@ -31,7 +31,10 @@ from snakebite.errors import (
 from snakebite.namenode import Namenode
 from snakebite.service import RpcService
 
-import Queue
+try:
+    import queue as Queue
+except ImportError:
+    import Queue
 import zlib
 import bz2
 import logging
@@ -44,6 +47,7 @@ import socket
 import errno
 import time
 import re
+import six
 import sys
 import random
 
@@ -454,7 +458,7 @@ class Client(object):
             raise InvalidInputException("rename2: no path given")
         if not dst:
             raise InvalidInputException("rename2: no destination given")
-        if not isinstance(path, (str, unicode)):
+        if not isinstance(path, six.string_types):
             raise InvalidInputException("rename2: Path should be a string")
 
         processor = lambda path, node, dst=dst, overwriteDest=overwriteDest: self._handle_rename2(path, node, dst, overwriteDest)
@@ -931,7 +935,7 @@ class Client(object):
 
         .. note:: directory and zero length are AND'd.
         '''
-        if not isinstance(path, (str, unicode)):
+        if not isinstance(path, six.string_types):
             raise InvalidInputException("Path should be a string")
         if not path:
             raise InvalidInputException("test: no path given")
@@ -1470,8 +1474,8 @@ class HAClient(Client):
 
     def __calculate_exponential_time(self, time, retries, cap):
         # Same calculation as the original Hadoop client but converted to seconds
-        baseTime = min(time * (1L << retries), cap);
-        return (baseTime * (random.random() + 0.5)) / 1000;
+        baseTime = min(time * (long(1) << retries), cap)
+        return (baseTime * (random.random() + 0.5)) / 1000
 
     def __do_retry_sleep(self, retries):
         # Don't wait for the first retry.

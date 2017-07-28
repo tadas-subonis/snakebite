@@ -66,7 +66,6 @@ import logger
 import logging
 import struct
 import uuid
-
 _kerberos_available = False
 try:
     from snakebite.rpc_sasl import SaslRpcClient
@@ -131,7 +130,7 @@ class RpcBufferedReader(object):
 
     def _buffer_bytes(self, n):
         to_read = n
-        for _ in xrange(self.MAX_READ_ATTEMPTS):
+        for _ in range(self.MAX_READ_ATTEMPTS):
             bytes_read = self.socket.recv(to_read)
             self.buffer += bytes_read
             to_read -= len(bytes_read)
@@ -162,7 +161,7 @@ class RpcBufferedReader(object):
 
 
 class SocketRpcChannel(RpcChannel):
-    ERROR_BYTES = 18446744073709551615L
+    ERROR_BYTES = 18446744073709551615
     RPC_HEADER = "hrpc"
     RPC_SERVICE_CLASS = 0x00
     AUTH_PROTOCOL_NONE = 0x00
@@ -617,7 +616,7 @@ class DataXceiverChannel(object):
                 # Collect checksums
                 if check_crc and checksum_type != self.CHECKSUM_NULL:
                     checksums = []
-                    for _ in xrange(0, chunks_per_packet):
+                    for _ in range(0, chunks_per_packet):
                         checksum = self._read_bytes(checksum_len)
                         checksum = struct.unpack("!I", checksum)[0]
                         checksums.append(checksum)
