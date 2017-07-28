@@ -16,14 +16,13 @@ class EffectiveUserTest(MiniClusterTestBase):
                                            effective_user='__foobar')
 
     def test_touch(self):
-        print tuple(self.custom_client.touchz([self.VALID_FILE]))
         try:
             tuple(self.custom_foobar_client.touchz([self.INVALID_FILE]))
-	except Exception, e:
+        except Exception as e:
             self.assertTrue(e.message.startswith(self.ERR_MSG_TOUCH))
 
-        self.custom_client.stat([self.VALID_FILE])
-        try:
-            self.custom_client.stat([self.INVALID_FILE])
-        except Exception, e:
-            self.assertEquals(e.message, self.ERR_MSG_STAT)
+            self.custom_client.stat([self.VALID_FILE])
+            try:
+                self.custom_client.stat([self.INVALID_FILE])
+            except Exception as e:
+                self.assertEquals(e.message, self.ERR_MSG_STAT)

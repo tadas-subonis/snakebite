@@ -1,4 +1,4 @@
-import unittest2
+import unittest as unittest2
 import os
 import time
 

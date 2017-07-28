@@ -19,7 +19,6 @@ import random
 
 
 class TailTest(MiniClusterTestBase):
-
     # Test cases
 
     def test_tail_on_one_block(self):
@@ -48,7 +47,7 @@ class TailTest(MiniClusterTestBase):
 
     # Helper Methods:
 
-    def _compare_files(self, path, random_tail = False, minimal_tail_length = 1):
+    def _compare_files(self, path, random_tail=False, minimal_tail_length=1):
         output = self.cluster.tail(path)
         tail_length = 1024  # The default tail length
 
@@ -63,10 +62,9 @@ class TailTest(MiniClusterTestBase):
         f = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'testfiles', 'test3'))
 
         p = self.cluster.put_subprocess('-', path)
-        for _ in xrange(131072):  # 1024 * 131072 = 134,217,728 (default block size)
+        for _ in range(131072):  # 1024 * 131072 = 134,217,728 (default block size)
             f.seek(0)
             for line in f.readlines():
-                print >> p.stdin, line
-        print >> p.stdin, 'some extra bytes to exceed one blocksize'  # +40
+                print(line, file=p.stdin)
+        print('some extra bytes to exceed one blocksize', file=p.stdin)
         p.communicate()
-

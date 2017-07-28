@@ -18,26 +18,25 @@ from snakebite.errors import InvalidInputException
 
 
 class ChmodTest(MiniClusterTestBase):
-
     def test_onepath(self):
-        list(self.client.chmod(['/dir1'], 0777))
+        list(self.client.chmod(['/dir1'], 511))
         client_output = list(self.client.ls(['/dir1'], include_toplevel=True, include_children=False))
         self.assertEqual(client_output[0]["permission"], 511)
 
     def test_multipath(self):
-        list(self.client.chmod(['/dir1', '/zerofile'], 0700))
+        list(self.client.chmod(['/dir1', '/zerofile'], 511))
         client_output = self.client.ls(['/dir1', '/zerofile'], include_toplevel=True, include_children=False)
         for node in client_output:
             self.assertEqual(node["permission"], 448)
 
     def test_recursive(self):
-        list(self.client.chmod(['/'], 0770, recurse=True))
+        list(self.client.chmod(['/'], 511, recurse=True))
         expected_output = self.cluster.ls(["/"], ["-R"])
         for node in expected_output:
             self.assertEqual(node["permission"], 504)
 
     def test_unknown_file(self):
-        result = self.client.chmod(['/nonexistent'], 0777, recurse=True)
+        result = self.client.chmod(['/nonexistent'], 511, recurse=True)
         self.assertRaises(FileNotFoundException, result.next)
 
     def test_invalid_input(self):
