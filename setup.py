@@ -25,29 +25,36 @@ from snakebite.version import version
 
 import sys
 
+
 class Tox(TestCommand):
     user_options = [('tox-args=', None, "Arguments to pass to tox")]
+
     def initialize_options(self):
         TestCommand.initialize_options(self)
         self.tox_args = ''
+
     def finalize_options(self):
         TestCommand.finalize_options(self)
         self.test_args = []
         self.test_suite = True
+
     def run_tests(self):
-        #import here, cause outside the eggs aren't loaded
+        # import here, cause outside the eggs aren't loaded
         import tox
         errno = tox.cmdline(args=self.tox_args.split())
         sys.exit(errno)
 
+
 install_requires = [
-    'protobuf>2.4.1',
-    'argparse']
+    'protobuf>=3.2.0',
+    'argparse'
+]
 
 extras_require = {
     'kerberos': [
         'python-krbV',
-        'sasl']
+        'sasl'
+    ]
 }
 
 tests_require = [
@@ -68,6 +75,8 @@ setup(
     classifiers=[
         'Topic :: Utilities',
         'Programming Language :: Python',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.6',
         'Operating System :: POSIX :: Linux',
         'Operating System :: MacOS',
         'Topic :: Software Development :: Libraries :: Application Frameworks',

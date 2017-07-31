@@ -1,4 +1,6 @@
--r requirements.txt
+argparse
+six
+protobuf>=3.2.0
 nose
 unittest2
 mock

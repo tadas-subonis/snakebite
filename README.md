@@ -45,6 +45,10 @@ might want to install an older version by running:
 
 Note that the 1.3 branch is unmaintained and doesn't include any of the fixes in the 2.x branch.
 
+Protobuf
+=============
+protoc --python_out=snakebite/protobuf --proto_path=protobuf protobuf\*
+
 Documentation
 =============
 

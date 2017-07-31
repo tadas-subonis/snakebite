@@ -62,7 +62,7 @@ import google.protobuf.internal.decoder as decoder
 
 # Module imports
 
-import logger
+from . import logger
 import logging
 import struct
 import uuid

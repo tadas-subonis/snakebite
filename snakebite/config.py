@@ -6,7 +6,7 @@ try:
 except ImportError:
     from urlparse import urlparse
 
-from namenode import Namenode
+from .namenode import Namenode
 
 log = logging.getLogger(__name__)
 
